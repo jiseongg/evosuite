@@ -164,6 +164,11 @@ public enum RuntimeVariable {
     MethodNoExceptionFitnessTimeline,
     MethodNoExceptionCoverageTimeline,
     MethodNoExceptionCoverageBitString,
+    /** Obtained Method-Pair coverage (see tutorial) */
+    MethodPairCoverage,
+    MethodPairFitnessTimeline,
+    MethodPairCoverageTimeline,
+    MethodPairCoverageBitString,
 	/** The obtained line coverage */
 	LineCoverage,
     LineFitnessTimeline,

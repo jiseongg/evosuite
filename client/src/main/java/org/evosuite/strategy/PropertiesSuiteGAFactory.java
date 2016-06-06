@@ -47,6 +47,7 @@ import org.evosuite.regression.RegressionTestChromosomeFactory;
 import org.evosuite.regression.RegressionTestSuiteChromosomeFactory;
 import org.evosuite.statistics.StatisticsListener;
 import org.evosuite.ga.operators.crossover.CrossOverFunction;
+import org.evosuite.ga.operators.crossover.MiddleCrossOver;
 import org.evosuite.ga.operators.crossover.SinglePointCrossOver;
 import org.evosuite.ga.operators.crossover.SinglePointFixedCrossOver;
 import org.evosuite.ga.operators.crossover.SinglePointRelativeCrossOver;
@@ -222,6 +223,8 @@ public class PropertiesSuiteGAFactory extends PropertiesSearchAlgorithmFactory<T
 				        "Coverage crossover function requires test suite mode");
 
 			return new org.evosuite.ga.operators.crossover.CoverageCrossOver();
+		case MIDDLE:
+			return new MiddleCrossOver();
 		default:
 			throw new RuntimeException("Unknown crossover function: "
 			        + Properties.CROSSOVER_FUNCTION);
