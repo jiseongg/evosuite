@@ -59,3 +59,4 @@ public class MethodPairCoverageSystemTest extends SystemTestBase {
 		Assert.assertEquals(6, goals );
 		Assert.assertEquals("Non-optimal coverage: ", 1d, best.getCoverage(), 0.001);
 	}
+}
