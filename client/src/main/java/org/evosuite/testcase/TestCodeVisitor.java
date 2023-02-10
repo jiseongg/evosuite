@@ -1703,11 +1703,14 @@ public class TestCodeVisitor extends TestVisitor {
 	}
 
 	private boolean shouldUseTryCatch(Throwable t, boolean isDeclared) {
-		return t != null
-				&& ! (t instanceof OutOfMemoryError)
-				&& ! (t instanceof TooManyResourcesException)
-				&& ! test.isFailing()
-				&& (Properties.CATCH_UNDECLARED_EXCEPTIONS || isDeclared);
+    return false;
+    /*
+    return t != null
+	 			&& ! (t instanceof OutOfMemoryError)
+	 			&& ! (t instanceof TooManyResourcesException)
+	 			&& ! test.isFailing()
+	 			&& (Properties.CATCH_UNDECLARED_EXCEPTIONS || isDeclared);
+        */
 	}
 
 	/**
