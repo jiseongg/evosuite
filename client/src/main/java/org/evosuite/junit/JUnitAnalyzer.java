@@ -235,7 +235,13 @@ public abstract class JUnitAnalyzer {
                     logger.info("Exception trace: {}", elem);
                 }
 
-                boolean toRemove = !(failure.isAssertionError());
+                /*
+                 * JISEONG
+                 * For the purpose of NPE experiment, failed tests
+                 * should not be removed
+                 */
+				        boolean toRemove = false;
+				        //boolean toRemove = !(failure.isAssertionError());
 
                 for (int i = 0; i < tests.size(); i++) {
                     if (TestSuiteWriterUtils.getNameOfTest(tests, i).equals(testName)) {
