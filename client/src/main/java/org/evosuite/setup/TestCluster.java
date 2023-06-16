@@ -1247,10 +1247,18 @@ public class TestCluster {
 		}
 
 
+    logger.debug("Test: " + test.toCode());
 		if(Properties.SORT_CALLS) {
 			candidateTestMethods = sortCalls(candidateTestMethods);
 		}
 
+    for (GenericAccessibleObject<?> o : testMethods) {
+      logger.debug("TestMethod: " + o.getName());
+    }
+
+    for (GenericAccessibleObject<?> o : candidateTestMethods) {
+      logger.debug("CandidateTestMethod: " + o.getName());
+    }
 		GenericAccessibleObject<?> choice = Properties.SORT_CALLS ? ListUtil.selectRankBiased(candidateTestMethods) : Randomness.choice(candidateTestMethods);
 		logger.debug("Chosen call: " + choice);
 		if (choice.getOwnerClass().hasWildcardOrTypeVariables()) {
